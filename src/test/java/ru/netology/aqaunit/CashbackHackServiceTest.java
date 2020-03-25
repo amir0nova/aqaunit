@@ -7,16 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class CashbackHackServiceTest {
 
     @Test
-    //отрицательный тест на проверку тестового метода
-    void testNegativeOfAdd200IfAmountLowerThen1000Equals900() {
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        int amount = 900;
-        int actual = cashbackHackService.remain(amount);
-        int expected = 200;
-        assertEquals(expected, actual); // должен упасть!
-    }
-
-    @Test
     void shouldAdd100IfAmountLowerThen1000Equals900() {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int amount = 900;
