@@ -7,6 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class CashbackHackServiceTest {
 
     @Test
+    void shouldReturnIllegalArgumentExceptionIfAmountLessOrEquals0() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int amount = -1;
+        assertThrows(IllegalArgumentException.class, () -> cashbackHackService.remain(amount));
+    }
+
+    @Test
     void shouldAdd100IfAmountLowerThen1000Equals900() {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int amount = 900;
@@ -25,20 +32,11 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    void shouldAdd375IfAmountLowerThen2000Equals1625() {
+    void calculateShouldAdd375IfAmountEquals1625() {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int amount = 1625;
         int actual = cashbackHackService.remain(amount);
         int expected = 375;
-        assertEquals(expected, actual);
-    }
-
-    @Test
-    void shouldAdd0IfAmountIs2000() {
-        CashbackHackService cashbackHackService = new CashbackHackService();
-        int amount = 2000;
-        int actual = cashbackHackService.remain(amount);
-        int expected = 0;
         assertEquals(expected, actual);
     }
 }
