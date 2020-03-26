@@ -1,0 +1,10 @@
+amount,expected,message
+10,990,Should be 990 for amount 10 (lower than 1000)
+900,100,Should be 100 for amount 900 (lower than 1000)
+1000,0,Should be 0 for amount = 1000
+1300,700,Should be 700 for amount 1300 (lower than 2000)
+2000,0,Should be 0 for amount = 2000
+1625,375,Should be 375 for amount = 1625
+6400,600,Should be 600 for amount = 6400
+100000,0,Should be 0 for amount = 100000
+
